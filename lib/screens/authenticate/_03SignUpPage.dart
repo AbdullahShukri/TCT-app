@@ -372,7 +372,7 @@ class _SignUpState extends State<SignUp> {
               height: ScreenHeight * 0.06,
               width: ScreenWidth * 0.25,
               child: ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   Get.to(() => login());
                 },
                 style: ElevatedButton.styleFrom(

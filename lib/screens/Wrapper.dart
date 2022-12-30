@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tct/screens/home/Home.dart';
+import 'package:tct/screens/authenticate/Authenticate.dart';
 
 class Wrapper extends StatelessWidget {
 
@@ -7,6 +7,6 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
 
     // return either home/authenticate pages.
-    return Home(); // return auth() in case user is logged in.
+    return Authenticate(); // return auth() in case user is logged in.
   }
 }
