@@ -1,0 +1,2 @@
+
+// Should proxy authenticate pages.

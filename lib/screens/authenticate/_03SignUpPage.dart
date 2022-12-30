@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tct/_02LoginPage.dart';
+import 'package:tct/screens/authenticate/_02LoginPage.dart';
 
 enum GenderType { Male, Female }
 

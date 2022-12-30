@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '_03SignUpPage.dart';
+import '../authenticate/_03SignUpPage.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -151,9 +152,9 @@ class _homeState extends State<Home> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                    image: AssetImage('assets/00.2 background.jpg'),
-                    fit: BoxFit.fill,
-                  ))),
+                        image: AssetImage('assets/00.2 background.jpg'),
+                        fit: BoxFit.fill,
+                      ))),
               Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -167,33 +168,33 @@ class _homeState extends State<Home> {
                       Color(0xffffffff),
                       Color(0xffffffff),
                     ])),*/
-                  child: Row(
+                child: Row(
 
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.calendar_month),
-                        iconSize: ScreenWidth * 0.10,
-                        color: Color(0xff135779),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.search),
-                        iconSize: ScreenWidth * 0.10,
-                        color: Color(0xff135779),
-                      ),
-                      buildSearch(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.menu),
-                        iconSize: ScreenWidth * 0.10,
-                        color: Color(0xff135779),
-                      ),
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.calendar_month),
+                      iconSize: ScreenWidth * 0.10,
+                      color: Color(0xff135779),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.search),
+                      iconSize: ScreenWidth * 0.10,
+                      color: Color(0xff135779),
+                    ),
+                    buildSearch(),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.menu),
+                      iconSize: ScreenWidth * 0.10,
+                      color: Color(0xff135779),
+                    ),
 
-                    ],
-                  ),
+                  ],
                 ),
+              ),
 
 
 
@@ -256,7 +257,7 @@ class _homeState extends State<Home> {
           ),
 
         ),
-        ),
+      ),
 
     );
   }

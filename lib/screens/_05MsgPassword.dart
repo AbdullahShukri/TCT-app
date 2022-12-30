@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tct/_01CoverPage.dart';
+import 'package:tct/screens/_01CoverPage.dart';
 
 class MsgPassword extends StatefulWidget {
   const MsgPassword({super.key});

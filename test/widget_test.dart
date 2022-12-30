@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tct/_01CoverPage.dart';
+import 'package:tct/screens/_01CoverPage.dart';
 
 import 'package:tct/main.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '_02LoginPage.dart';
+import 'package:tct/screens/Wrapper.dart';
 
 class myApp extends StatelessWidget {
   const myApp({super.key});
@@ -43,7 +43,7 @@ class _coverPageState extends State<coverPage> {
         child: InkWell(
           child: IconButton(
             onPressed: () {
-              Get.to(() => login());
+              Get.to(() => Wrapper());
               print('Enter pressed');
             },
             icon: const Icon(Icons.login),

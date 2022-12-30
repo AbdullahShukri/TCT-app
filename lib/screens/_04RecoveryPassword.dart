@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tct/_02LoginPage.dart';
-import 'package:tct/_05MsgPassword.dart';
+import 'package:tct/screens/_05MsgPassword.dart';
+import 'package:tct/screens/authenticate/_02LoginPage.dart';
 
 class recoveryPass extends StatefulWidget {
   const recoveryPass({super.key});

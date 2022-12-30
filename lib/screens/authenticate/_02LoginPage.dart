@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import '../_04RecoveryPassword.dart';
+import '../home/Home.dart';
 import '_03SignUpPage.dart';
-import '_04RecoveryPassword.dart';
-import '_06HomePage1.dart';
 
 class login extends StatefulWidget {
   const login({super.key});
