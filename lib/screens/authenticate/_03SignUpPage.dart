@@ -21,6 +21,7 @@ class _SignUpState extends State<SignUp> {
   String username = '';
   String email = '';
   String password = '';
+  String error = '';
   Widget buildUserNameSign() {
     final ScreenWidth = MediaQuery.of(context).size.width;
     final ScreenHeight = MediaQuery.of(context).size.height;
@@ -388,10 +389,14 @@ class _SignUpState extends State<SignUp> {
               width: ScreenWidth * 0.25,
               child: ElevatedButton(
                 onPressed: () async {
-                  // await Firebase.initializeApp();
-                  print(username);
-                  print(email);
-                  print(password);
+
+                  dynamic result = await _authService.registration(email: email, password: password);
+                  if (result == null) {
+                    setState(() => error = 'Please supply a valid email');
+                  } else {
+                    print(result);
+                    print("Success registeration");
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff135779),

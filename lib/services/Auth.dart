@@ -1,16 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:tct/models/UserModel.dart';
 
 class AuthService {
-  Future<String?> registration({
+
+
+
+  UserModel? _customUserFromFireBaseUser(User? user) {
+
+    return user != null ? UserModel(user.uid) :  null;
+  }
+
+  Future registration({
     required String email,
     required String password,
   }) async {
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      return 'Success';
+      final res = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+      User? fbUser = res.user;
+      return _customUserFromFireBaseUser(fbUser);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         return 'The password provided is too weak.';
@@ -20,7 +27,8 @@ class AuthService {
         return e.message;
       }
     } catch (e) {
-      return e.toString();
+      print(e.toString());
+      return null;
     }
   }
 
