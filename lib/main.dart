@@ -2,7 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:provider/provider.dart';
+import 'package:tct/models/UserModel.dart';
+import 'package:tct/screens/Wrapper.dart';
 import 'package:tct/screens/_01CoverPage.dart';
+import 'package:tct/services/Auth.dart';
 
 void main() async {
   // await Firebase.initializeApp();
@@ -12,10 +16,19 @@ void main() async {
           messagingSenderId: "162047492420",
           projectId: "user-auth-29099")
   );
-  runApp(
-    GetMaterialApp(
-      home: coverPage(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamProvider<UserModel?>.value(
+      value: AuthService().user,
+        initialData: null,
+        child: MaterialApp(
+          home: Wrapper(),
+        ),
+
+    );
+  }
 }

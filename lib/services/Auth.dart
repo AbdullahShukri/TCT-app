@@ -10,6 +10,11 @@ class AuthService {
     return user != null ? UserModel(user.uid) :  null;
   }
 
+  Stream<UserModel?> get user {
+    return FirebaseAuth.instance.authStateChanges()
+        .map(_customUserFromFireBaseUser); // convert it into a stream of our userModel
+  }
+
   Future registration({
     required String email,
     required String password,
