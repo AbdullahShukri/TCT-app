@@ -1,7 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tct/screens/authenticate/_02LoginPage.dart';
+import 'package:tct/services/Auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 enum GenderType { Male, Female }
 
@@ -13,8 +16,11 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final AuthService _authService = AuthService();
   GenderType? _genderType = GenderType.Male;
-
+  String username = '';
+  String email = '';
+  String password = '';
   Widget buildUserNameSign() {
     final ScreenWidth = MediaQuery.of(context).size.width;
     final ScreenHeight = MediaQuery.of(context).size.height;
@@ -40,6 +46,9 @@ class _SignUpState extends State<SignUp> {
           ),
           child: TextField(
             keyboardType: TextInputType.text,
+            onChanged: (val) {
+              setState(() => username = val);
+            },
             style: TextStyle(
               color: Color(0xcc000000),
             ),
@@ -96,6 +105,9 @@ class _SignUpState extends State<SignUp> {
           ),
           child: TextField(
             keyboardType: TextInputType.emailAddress,
+            onChanged: (val) {
+              setState(() => email = val);
+            },
             style: TextStyle(
               color: Color(0xcc000000),
             ),
@@ -152,6 +164,9 @@ class _SignUpState extends State<SignUp> {
           ),
           child: TextField(
             obscureText: true,
+            onChanged: (val) {
+              setState(() => password = val);
+            },
             style: TextStyle(
               color: Color(0xcc000000),
             ),
@@ -373,7 +388,10 @@ class _SignUpState extends State<SignUp> {
               width: ScreenWidth * 0.25,
               child: ElevatedButton(
                 onPressed: () async {
-                  Get.to(() => login());
+                  // await Firebase.initializeApp();
+                  print(username);
+                  print(email);
+                  print(password);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff135779),
